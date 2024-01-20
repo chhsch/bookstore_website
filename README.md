@@ -7,7 +7,7 @@ The website offers a comprehensive product catalog, a dynamic shopping cart, and
 ## Features
 
 - **User-Friendly Interface**: LeafLink boasts a clean, responsive design, ensuring easy navigation across various categories such as Health, Children, Sports, Travel, and E-books.
-![Alt text](https://drive.google.com/file/d/1s0Is8WACIj6vF6d6XEzAypFNvpzBD9ZM/preview "LeafLink Screenshot")
+![Alt text](https://github.com/chhsch/bookstore_website/blob/main/img/Screen%20Shot%202024-01-19%20at%209.39.34%20PM%20copy.png)
 
 - **Product Listings**: Each book is showcased with its cover image, price, and an easy-to-use 'Add to Cart' button, streamlining the selection process.
 
