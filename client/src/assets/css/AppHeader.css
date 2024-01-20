@@ -1,0 +1,89 @@
+
+
+.text-logo {
+    font-family: var(--title-font-family);
+}
+
+
+
+@media (max-width: 1438px) {
+    header {
+        flex-direction: column;
+        background-color: black;
+    }
+}
+.login-text-button {
+    background: none;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 35px;
+    align-self: center;
+    margin-top: 10px;
+    position: absolute;
+
+
+}
+
+
+
+.login-text-button:hover {
+    text-decoration: underline;}
+
+
+
+.icon-button {
+    align-self: center;
+}
+.app-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px 6px;
+    position: fixed;
+    top: 0;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background-color: white;
+
+}
+.logo{
+    width: auto;
+    height: 100px;
+    padding-left: 5px;}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    padding-right: 40px;
+    width: 100%;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+.icon-button.login-button {
+    display: flex;
+    align-items: flex-end;
+}
+.icon {
+    margin: 0;
+
+}
+
+.login-text-button {
+    margin: 20px;
+
+}
+.icon-img {
+    margin: 0;
+
+}
+.icon-button.login-button:active .login-text-button {
+    text-decoration: underline;
+}
+

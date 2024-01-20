@@ -1,0 +1,129 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+GET http://localhost:8080/ChihHsingBookstoreReactTransact/api/categories
+Accept: application/json
+
+
+
+###
+POST http://{{host}}:8080/{{base}}/api/orders
+Accept: */*
+Accept-Language: en-US,en;q=0.9
+Cache-Control: no-cache
+Connection: keep-alive
+Cookie: Idea-7dc981aa=0357570d-b1ad-42d7-86e6-ff92ec29d89c
+DNT: 1
+Origin: http://localhost:8080
+Pragma: no-cache
+Referer: http://localhost:8080/DrABookstoreFinal/client
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+sec-ch-ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Content-Type: application/json
+
+{
+  "cart": {
+    "itemArray": [
+      {
+        "book": {
+          "bookId": 1001,
+          "title": "Our Bodies, Ourselves",
+          "author": "Judy Norsigian",
+          "description": "",
+          "price": 23.12,
+          "rating": 0,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1001
+        },
+        "quantity": 1,
+        "id": 1001
+      }
+    ]
+  },
+
+  "customerForm": {
+    "name": "Hathaway",
+    "address": "123 Main St",
+    "phone": "408 555 1212",
+    "email": "steve@email.com",
+    "ccNumber": "4444333322221111",
+    "ccExpiryMonth": 11,
+    "ccExpiryYear": 2025
+  }
+}
+###
+
+# curl 'http://localhost:3000/ChihHsingBookstoreReactTransact/api/api/orders'
+#  -H 'Accept: application/json, text/plain, */*'
+#  -H 'Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'
+#  -H 'Connection: keep-alive'
+#  -H 'Content-Type: application/json'
+#  -H 'Cookie: JSESSIONID=1760440861D1485F747BD166E67CCA22; ph_foZTeM1AW8dh5WkaofxTYiInBhS4XzTzRqLs50kVziw_posthog=%7B%22distinct_id%22%3A%22188f30421e41060-0debac05f5e488-1b525634-1fa400-188f30421e7140%22%2C%22%24device_id%22%3A%22188f30421e41060-0debac05f5e488-1b525634-1fa400-188f30421e7140%22%2C%22%24user_state%22%3A%22anonymous%22%2C%22extension_version%22%3A%221.5.5%22%2C%22%24session_recording_enabled_server_side%22%3Afalse%2C%22%24autocapture_disabled_server_side%22%3Afalse%2C%22%24active_feature_flags%22%3A%5B%5D%2C%22%24enabled_feature_flags%22%3A%7B%22enable-session-recording%22%3Afalse%2C%22sourcing%22%3Afalse%2C%22only-company-edit%22%3Afalse%2C%22job-lists%22%3Afalse%7D%2C%22%24feature_flag_payloads%22%3A%7B%7D%2C%22%24sesid%22%3A%5B1687768846245%2C%22188f6dccfa51623-0116e881b73a8f-1b525634-1fa400-188f6dccfa61b63%22%2C1687768846245%5D%7D; Idea-e506ff6c=7c50c7b9-a2ab-46cf-97c8-69b84d3c7afe'
+#  -H 'Origin: http://localhost:3000'
+#  -H 'Referer: http://localhost:3000/ChihHsingBookstoreReactTransact/checkout'
+#  -H 'Sec-Fetch-Dest: empty'
+#  -H 'Sec-Fetch-Mode: cors'
+#  -H 'Sec-Fetch-Site: same-origin'
+#  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+#  -H 'sec-ch-ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"'
+#  -H 'sec-ch-ua-mobile: ?0'
+#  -H 'sec-ch-ua-platform: "macOS"'
+#  --data-raw '{"customerForm":{"name":"Hathaway","address":"2251 Pimmit Drive","phone":"2023911719","email":"hathawayc080119@vt.edu","ccNumber":"4444333322221111","ccExpiryMonth":3,"ccExpiryYear":2026},"cart":{"itemArray":[{"id":1005,"book":{"bookId":1005,"isPublic":true,"price":7,"title":"How to Catch a Witch","author":" Alice Walstead","categoryId":1002},"quantity":2}]}}'
+#  --compressed
+POST http://localhost:8080/ChihHsingBookstoreReactTransact/api/orders
+Accept: application/json, text/plain, */*
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Connection: keep-alive
+Cookie: JSESSIONID=1760440861D1485F747BD166E67CCA22; ph_foZTeM1AW8dh5WkaofxTYiInBhS4XzTzRqLs50kVziw_posthog=%7B%22distinct_id%22%3A%22188f30421e41060-0debac05f5e488-1b525634-1fa400-188f30421e7140%22%2C%22%24device_id%22%3A%22188f30421e41060-0debac05f5e488-1b525634-1fa400-188f30421e7140%22%2C%22%24user_state%22%3A%22anonymous%22%2C%22extension_version%22%3A%221.5.5%22%2C%22%24session_recording_enabled_server_side%22%3Afalse%2C%22%24autocapture_disabled_server_side%22%3Afalse%2C%22%24active_feature_flags%22%3A%5B%5D%2C%22%24enabled_feature_flags%22%3A%7B%22enable-session-recording%22%3Afalse%2C%22sourcing%22%3Afalse%2C%22only-company-edit%22%3Afalse%2C%22job-lists%22%3Afalse%7D%2C%22%24feature_flag_payloads%22%3A%7B%7D%2C%22%24sesid%22%3A%5B1687768846245%2C%22188f6dccfa51623-0116e881b73a8f-1b525634-1fa400-188f6dccfa61b63%22%2C1687768846245%5D%7D; Idea-e506ff6c=7c50c7b9-a2ab-46cf-97c8-69b84d3c7afe
+Origin: http://localhost:3000
+Referer: http://localhost:3000/ChihHsingBookstoreReactTransact/checkout
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+sec-ch-ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+Content-Type: application/json
+
+{
+  "customerForm": {
+    "name": "Hathaway",
+    "address": "2251 Pimmit Drive",
+    "phone": "2023911719",
+    "email": "hathawayc080119@vt.edu",
+    "ccNumber": "4444333322221111",
+    "ccExpiryMonth": 3,
+    "ccExpiryYear": 2026
+  },
+  "cart": {
+    "itemArray": [
+      {
+        "id": 1005,
+        "book": {
+          "bookId": 1005,
+          "isPublic": true,
+          "price": 7,
+          "title": "How to Catch a Witch",
+          "author": " Alice Walstead",
+          "categoryId": 1002
+        },
+        "quantity": 2
+      }
+    ]
+  }
+}
+
+###
+

@@ -1,0 +1,267 @@
+
+/* Hide the categories list by default and position it absolutely */
+/*.categories-list {*/
+/*    text-decoration: none;*/
+/*    color: black;*/
+/*    padding-right: 50px;*/
+/*    position: relative;*/
+/*    transform: translateX(7px);  !* 添加此行，向右移動下拉選單 *!*/
+/*}*/
+.categories-list li a {
+    padding-left: 60px;
+    padding-bottom: 10px;
+}
+
+
+/* Show the categories list when the dropdown is hovered */
+.dropdown:hover .categories-list {
+    display: block;
+    color: #080808;
+    /*background-color: #b94646;*/
+}
+.button.categories-button {
+    background-color: transparent;  /* Choose any color you prefer */
+    color: #080808;  /* Text color */
+    border: none;    /* Removes border */
+    padding: 10px 20px;  /* Adds padding */
+    cursor: pointer;  /* Changes the cursor on hover */
+    transition: background-color 0.3s ease;  /* Adds smooth color transition */
+    width: 150px;
+    position: relative;
+    font-weight: bold;
+}
+
+.button.categories-button.no-wrap{
+    font-weight: bold;
+}
+
+/*.button.categories-button:visited {*/
+/*    color: var(--primary-color);*/
+/*}*/
+
+
+/* Styles for the dropdown list */
+/*ul {*/
+/*    background-color: #f9f9f9;  !* Choose any background color you like *!*/
+/*    border: 1px solid #ccc;     !* Optional border *!*/
+/*    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  !* Optional shadow for a floating effect *!*/
+/*    display: none;  !* Initially hidden *!*/
+/*    list-style-type: none;  !* Removes list bullets *!*/
+/*    margin: 0;      !* Removes margin *!*/
+/*    padding: 0;     !* Removes padding *!*/
+/*    position: absolute;  !* Allows for custom placement *!*/
+/*    width: 150px;    !* Set to whatever width you like *!*/
+/*    z-index: 1;     !* Stacks above other elements *!*/
+/*}*/
+
+/* Show the list when hovering the categories-button */
+.button.categories-button:hover + ul {
+    display: block;
+}
+
+/* Styles for list items */、
+
+/* Styles for list items on hover */
+ul li:hover {
+   background-color: #b23939; /* 選擇您喜歡的顏色 */
+   color: #000;
+}
+ul li {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* This adds a line between items */
+}
+
+/* Remove border-bottom for the last item */
+ul li:last-child {
+    border-bottom: none;
+}
+
+.category-item a:hover {
+    color: #000;
+    text-decoration: none;  /* 去掉滑鼠懸停時的底線 */
+}
+.category-item:hover {
+    background-color: rgba(215, 36, 36, 0.35);
+    border-radius: 8px;
+
+}
+ /*移除所有 category-item 下的鏈接的底線 */
+.category-item a {
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: none;
+    color: #c53f3f;
+    /*padding-left: 20px;  !* make room for the icon *!*/
+    position: relative;
+    color: #b94646;
+    background-color: #c5b8b8;
+
+}
+/*a::before {*/
+/*    content: ''; !* 必要，這會創建一個空的偽元素 *!*/
+/*    display: inline-block; !* 將偽元素設置為inline-block來控制大小和對齊 *!*/
+/*    vertical-align: middle; !* 垂直居中對齊圖標和文字 *!*/
+/*    margin-right: 5px; !* 在圖標和文字之間添加一些空間 *!*/
+/*    width: 25px; !* 控制圖標的寬度 *!*/
+/*    height: 25px; !* 控制圖標的高度 *!*/
+/*    background-size: contain; !* 讓背景圖像適應容器大小 *!*/
+/*    background-repeat: no-repeat; !* 防止背景圖像重複 *!*/
+/*}*/
+
+
+
+
+
+
+.category-item a {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;  /* 距離圖標和文字之間的間距 */
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.category-item a::before {
+    /*content: "";*/
+    /*display: block;*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+    content: "";
+    display: block; /* Make the pseudo-element a block to place it above the text */
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px; /* Space between icon and text */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0; /* Position at the top of the padding area */
+    left: 15%; /* Start at the horizontal center of the element */
+    transform: translateX(-50%); /* Center the icon */
+}
+
+.category-item a[href*="/categories/Children"]::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/rocking-horse.png');
+}
+
+.category-item a[href*="/categories/Health"]::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/heart (1).png');
+}
+.category-item a[href*="/categories/Sports"]::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/dumbbell.png');
+}
+.category-item a[href*="/categories/Travel"]::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/airplane.png');
+}
+
+.category-item a[href*="/categories/E-books"]::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/e-book.png');
+}
+
+
+
+
+
+
+.Health a[href*="/categories/Health"]::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/heart (1).png');
+}
+
+.Children a::before {
+    background-image: url('../images/categories/rocking-horse.png');
+}
+.Sports a::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/dumbbell.png');
+}
+
+.Travel a::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/airplane.png');
+}
+.E-books a::before {
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/e-book.png');
+}
+.categories-list {
+    list-style: none;
+    padding: 2px;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    z-index: 1;
+    width: 150px; /* Same width as button */
+    background-color: #ffffff; /* white background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add some shadow */
+    /*display: flex; !* Change from none to flex to make it visible *!*/
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+
+}
+
+.dropdown {
+    display: flex;
+    justify-content: center; /* Center the items */
+    position: relative;
+
+}
+
+
+
+.categories-button::after {
+    /* content: ""; */
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReact/client/src/assets/images/categories/e-book.png'); /* replace with your icon path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #100e0e;
+}
+.down-arrow {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+}
+.button.categories-button {
+    display: flex;
+    align-items: center;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 110px;
+    z-index: 800;
+    padding: 0 5% ;
+    font-weight: 600;
+    align-items: center;
+    font-style: italic;
+    font-size: 1.2em;
+
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+
+
+.button {
+    margin-right: 10px;
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+.no-underline {
+    text-decoration: none;
+}

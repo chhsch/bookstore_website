@@ -1,0 +1,37 @@
+
+.confirmationView {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10em;
+    padding-top: 5em;
+    margin-left: 15em;
+    margin-bottom: 7em;
+    gap: 3em;
+
+}
+.confirmationback {
+    display: flex;
+    background-image: url('/Users/hathaway/IdeaProjects/ChihHsingBookstoreReactTransact/client/src/assets/images/site/confirm.jpg'); /* Update this path to match where you placed your image */
+    background-size: 100% 100%; /* This will ensure that your background covers the entire div */
+    background-repeat: no-repeat; /* This will ensure the image doesn't repeat */
+    justify-content: space-between;
+}
+
+ ul {
+    text-align: left;
+    }
+ ul > li {
+    margin: 1em;
+    }
+
+
+.Info {
+    padding: 1em;
+    border-radius: 10px;
+    width: 500px;
+}
+.date{
+    padding-top: 10px;
+    width: 200px;
+}

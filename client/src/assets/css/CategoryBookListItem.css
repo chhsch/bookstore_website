@@ -1,0 +1,99 @@
+
+.book-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color:#D9E9EB;
+    padding: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+    flex: 0 0 calc(50% - 20px);
+    box-sizing: border-box;
+    margin: 10px;
+
+}
+
+
+
+.book-image img {
+    width: 88%;
+    object-fit: cover;
+    border-radius: 5px;
+    padding-left: 2em;
+    display: block;
+}
+
+
+.button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #9B3333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+
+}
+.button:hover {
+    background-color: #bd2e2e;
+}
+
+.sidebar-button {
+    font-size: 16px;
+    background: none;
+    text-decoration: none;
+}
+
+.sidebar-button:hover {
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+
+.icon-right-top {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    cursor: pointer;
+    height: 30px;
+
+}
+.icon-right-top img {
+    width: 30%;
+    height: auto;
+}
+
+
+
+
+
+.book-image {
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 2em;
+    position: relative;
+
+
+}
+.button-cat{
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #9B3333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+}
+.button-cat:hover {
+     background-color: #bd2e2e;
+ }

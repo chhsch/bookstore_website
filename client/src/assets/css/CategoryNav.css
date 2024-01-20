@@ -1,0 +1,30 @@
+
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 20px;
+    border: 1px;
+    padding: 10px 20px 0 80px;
+    position: fixed;
+
+}
+
+.button.selected-category-button {
+    background-color: var(--primary-color);
+}
+
+.button.unselected-category-button,
+.button.unselected-category-button:visited {
+    background-color: var(--neutral-color);
+}
+
+.button.unselected-category-button:hover,
+.button.unselected-category-button:active {
+    background-color: var(--primary-color);
+}
+.button, .button:visited{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}

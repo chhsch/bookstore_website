@@ -1,0 +1,111 @@
+.logo img {
+    width: 150px;
+
+}
+#p1 {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.overlay-text {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:55px; /* Change as needed */
+    color: rgb(0, 0, 0); /* Change as needed */
+    z-index: 2;
+    text-align: left;
+    display: block;
+    flex-direction: column;
+    font-family: "Acme", sans-serif;
+}
+
+
+
+.text-part1 {
+    top: 60%;
+    font-family: 'Newsreader', sans-serif;
+    width: 500px;
+    display: block;
+}
+
+.text-part2 {
+    font-family: 'Newsreader', serif;
+    font-weight: bold;
+    display: block;
+}
+
+
+.shop-button {
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 0.5em;
+    background-color: #D08282;
+    color: white;
+    border: none;
+    border-radius: 0.5px;  /* Adjusted border-radius */
+    box-shadow: 0 12px 8px rgba(0,0,0,0.1);  /* Adjusted box-shadow */
+    position: absolute;
+    top: 150px;
+    left: 1%;
+}
+
+button.shop-button {
+    cursor: pointer;
+}
+.shop-button:hover {
+    background-color: #b23939;
+}
+
+.books-images {
+    display: flex;
+    margin-left: 20px;
+}
+
+.books {
+    position: absolute;
+    margin-top: 10px;
+    padding-top: 200px;
+    padding-left: 1000px;
+    /*top: 600 px;*/
+    display: flex;
+    align-items: flex-end;
+    width: 80%;
+}
+
+.book {
+    margin: 0px;
+}
+.book2 {
+    z-index: 3;
+    width: 150px;
+    height: auto;
+    box-shadow: 0 15px 10px rgba(0,0,0,0.1);
+}
+
+
+.book1,
+.book3 {
+z-index: 1;
+width: 100px;
+height: auto;
+}
+.home-page{
+/*height: 70vh;*/
+padding-top: 150px;
+padding-bottom: 10px;
+width: 100%;
+display: flex;
+flex-direction: column;
+
+
+}
+.image.container{
+padding-top: 80px;
+
+}

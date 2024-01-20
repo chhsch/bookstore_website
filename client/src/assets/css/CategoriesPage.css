@@ -1,0 +1,55 @@
+.body-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.categories-page {
+    display: flex;
+    flex-direction: row; /* Adjust if necessary */
+    /*justify-content: right; !* Center the items horizontally, if that's your design *!*/
+    align-items: flex-end; /* Align items to the start of the flex container */
+    width: 80%; /* Adjust if necessary */
+    padding-left: 200px;
+    margin: 20px auto;
+    padding-bottom: 50px;
+}
+
+.categories-sidebar li:last-child {
+    border-bottom: none;
+}
+
+.categories-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.categories-main-content {
+    display: grid;
+    list-style: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0;
+    width:60%;
+    flex: 1;
+    margin-top: -40px;
+}
+.book-title {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.author-name {
+    font-family: 'Georgia', serif;
+}
+
+.price {
+    font-family: 'Helvetica', sans-serif;
+}
+
+.add-to-cart-button {
+    font-family: 'Verdana', sans-serif;
+}

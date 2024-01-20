@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    top: 700px;
+}
+
+.follow-us, .contact-us, .account {
+    margin: 0 10px;
+
+}
+
+/* Each section within the footer */
+.follow-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 700px;
+}
+
+.social-icons {
+    margin: 5px;
+}
+
+.follow-us img {
+    width: 25px;
+    height: auto;
+    margin-right: 25px;
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Social media icons (just buttons in this example) */
+.button {
+    background: white;
+    color: #333;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+}
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mail-icons {
+    margin: 10px 0;
+    width: 30px;
+    height: 30px;
+}
+.footer {
+    /*top: 800px;*/
+    /*font-weight: 400;*/
+    /*padding: 5px;*/
+    /*!*position: absolute;*!*/
+    /*width: 100%;*/
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+    flex-shrink: 0;
+    font-weight: 400;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
