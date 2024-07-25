@@ -18,7 +18,7 @@ The website offers a comprehensive product catalog, a dynamic shopping cart, and
 
 - **Secure Checkout Process**: A secure checkout form captures necessary details, offering a dropdown for expiration date selection and a complete purchase button for a quick and safe transaction.
 
-![Alt text](https://github.com/chhsch/bookstore_website/blob/main/img/Screen%20Shot%202024-01-19%20at%209.40.28%20PM%20copy.png)
+![Alt text](https://github.com/chhsch/bookstore_website/blob/main/img/web.gif)
 
 - **Persistent Cart**: Utilizing persistent storage, LeafLink ensures that a customer’s shopping cart contents are saved, enabling them to pick up where they left off during their next visit.
 
