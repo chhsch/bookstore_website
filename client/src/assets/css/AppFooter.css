@@ -1,8 +1,33 @@
+/* Wrapper to take full viewport height */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh; /* Ensure it takes full viewport height */
+}
+
+/* Content area to expand and contract */
+.content {
+    flex: 1; /* Allows content area to grow and fill available space */
+}
+
+/* Footer styles */
+.footer {
+    flex-shrink: 0; /* Ensures footer does not shrink and remains at the bottom */
+    font-weight: 400;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Container styles */
 .container {
     display: flex;
     justify-content: space-around;
-    top: 700px;
+    /* Remove top positioning */
+    /* top: 700px; */
 }
+
 
 .follow-us, .contact-us, .account {
     margin: 0 10px;

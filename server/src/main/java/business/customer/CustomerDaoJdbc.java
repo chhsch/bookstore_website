@@ -1,16 +1,12 @@
 package business.customer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import business.BookstoreDbException.BookstoreQueryDbException;
+import business.BookstoreDbException.BookstoreUpdateDbException;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import business.BookstoreDbException.BookstoreQueryDbException;
-import business.BookstoreDbException.BookstoreUpdateDbException;
 
 import static business.JdbcUtils.getConnection;
 
@@ -45,14 +41,16 @@ public class CustomerDaoJdbc implements CustomerDao {
             statement.setString(3, phone);
             statement.setString(4, email);
             statement.setString(5, ccNumber);
-            statement.setDate(6, (new java.sql.Date (ccExpDate.getTime())));
+            statement.setDate(6, (new java.sql.Date(ccExpDate.getTime())));
             int affected = statement.executeUpdate();
+            //Normally, INSERT should only affect 1 row.
             if (affected != 1) {
                 throw new BookstoreUpdateDbException("Failed to insert a customer, affected row count = " + affected);
             }
             long customerId;
             ResultSet rs = statement.getGeneratedKeys();
             if (rs.next()) {
+                //Get the value from the first column of the result set
                 customerId = rs.getLong(1);
             } else {
                 throw new BookstoreUpdateDbException("Failed to retrieve customerId auto-generated key");

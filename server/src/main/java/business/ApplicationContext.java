@@ -1,4 +1,3 @@
-
 package business;
 
 import business.book.BookDao;
@@ -11,16 +10,17 @@ import business.order.*;
 
 public class ApplicationContext {
 
-        // TODO Add field and complete the getter for bookDao
+    // TODO Add field and complete the getter for bookDao
 
-        private CategoryDao categoryDao;
-        private BookDao bookDao;
-        private OrderService orderService;
+    private CategoryDao categoryDao;
+    private BookDao bookDao;
+    private OrderService orderService;
 
-        private OrderDao orderDao;
-        private LineItemDao lineItemDao;
-        private CustomerDao customerDao;
-        public static ApplicationContext INSTANCE = new ApplicationContext();
+    private OrderDao orderDao;
+    private LineItemDao lineItemDao;
+    private CustomerDao customerDao;
+    //This creates a single global instance (INSTANCE) of ApplicationContext
+    public static ApplicationContext INSTANCE = new ApplicationContext();
 
     private ApplicationContext() {
 
@@ -31,10 +31,10 @@ public class ApplicationContext {
         customerDao = new CustomerDaoJdbc(); // Instantiate CustomerDao
 
         orderService = new DefaultOrderService();
-        ((DefaultOrderService)orderService).setBookDao(bookDao);
-        ((DefaultOrderService)orderService).setOrderDao(orderDao); // Wire in OrderDao
-        ((DefaultOrderService)orderService).setLineItemDao(lineItemDao); // Wire in LineItemDao
-        ((DefaultOrderService)orderService).setCustomerDao(customerDao); // Wire in CustomerDao
+        ((DefaultOrderService) orderService).setBookDao(bookDao);
+        ((DefaultOrderService) orderService).setOrderDao(orderDao); // Wire in OrderDao
+        ((DefaultOrderService) orderService).setLineItemDao(lineItemDao); // Wire in LineItemDao
+        ((DefaultOrderService) orderService).setCustomerDao(customerDao); // Wire in CustomerDao
     }
 
 
@@ -42,7 +42,10 @@ public class ApplicationContext {
         return categoryDao;
     }
 
-    public BookDao getBookDao() { return bookDao; }
+    public BookDao getBookDao() {
+        return bookDao;
+    }
+
     public OrderService getOrderService() {
         return orderService;
     }

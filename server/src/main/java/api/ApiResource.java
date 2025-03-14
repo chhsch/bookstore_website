@@ -1,30 +1,39 @@
 package api;
+
 import business.ApplicationContext;
-import business.category.Category;
-import business.category.CategoryDao;
 import business.book.Book;
 import business.book.BookDao;
+import business.category.Category;
+import business.category.CategoryDao;
 import business.order.OrderDetails;
 import business.order.OrderForm;
 import business.order.OrderService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
+
 import java.util.List;
 
+/**
+ * The ApiResource class defines RESTful API endpoints using Jakarta RESTful Web Services (JAX-RS)
+ * It provides routes to retrieve books, categories, suggested books, and place orders.
+ */
+//Everything inside this class is added after /api
+//This sets the base path as /, meaning all endpoints inside this class start from /.
 @ApplicationPath("/api")
 @Path("/")
 public class ApiResource {
-
+    //Uses ApplicationContext.INSTANCE to retrieve DAO (Data Access Object) instances for querying the database
     private final BookDao bookDao = ApplicationContext.INSTANCE.getBookDao();
     private final CategoryDao categoryDao = ApplicationContext.INSTANCE.getCategoryDao();
     private final OrderService orderService = ApplicationContext.INSTANCE.getOrderService();
 
     @GET
+    // Maps to /api/categories
     @Path("categories")
     @Produces(MediaType.APPLICATION_JSON)
+    //Injects the HttpServletRequest object into the method.
     public List<Category> categories(@Context HttpServletRequest httpRequest) {
         try {
             return categoryDao.findAll();
@@ -109,6 +118,7 @@ public class ApiResource {
             throw new ApiException(String.format("Category lookup by category name %s failed", categoryName), e);
         }
     }
+
     @GET
     @Path("categories/name/{category-name}/books")
     @Produces(MediaType.APPLICATION_JSON)
@@ -124,6 +134,7 @@ public class ApiResource {
             throw new ApiException(String.format("Books lookup by category name %s failed", categoryName), e);
         }
     }
+
     @GET
     @Path("categories/name/{category-name}/suggested-books")
     @Produces(MediaType.APPLICATION_JSON)

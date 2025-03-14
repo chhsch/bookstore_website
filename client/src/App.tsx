@@ -18,7 +18,7 @@ function App() {
     return (
         <CartProvider>
             <OrderDetailsProvider>
-                <Router basename="ChihHsingBookstoreReactTransact">
+                <Router basename="/ChihHsingBookstoreReactTransact">
                     <AppHeader />
 
                     <Routes>
