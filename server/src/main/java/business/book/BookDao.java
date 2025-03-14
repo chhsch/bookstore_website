@@ -2,6 +2,10 @@ package business.book;
 
 import java.util.List;
 
+/**
+ * Defines methods for querying books.
+ */
+
 public interface BookDao {
 
     public Book findByBookId(long bookId);

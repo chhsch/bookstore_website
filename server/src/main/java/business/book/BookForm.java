@@ -1,23 +1,23 @@
 /**
  * BSD 3-Clause License
- *
+ * <p>
  * Copyright (C) 2018 Steven Atkinson <steven@nowucca.com>
  * All rights reserved.
- *
+ * <p>
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *
+ * <p>
  * * Redistributions of source code must retain the above copyright notice, this
- *   list of conditions and the following disclaimer.
- *
+ * list of conditions and the following disclaimer.
+ * <p>
  * * Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
- *
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ * <p>
  * * Neither the name of the copyright holder nor the names of its
- *   contributors may be used to endorse or promote products derived from
- *   this software without specific prior written permission.
- *
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ * <p>
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -34,13 +34,14 @@ package business.book;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
+ * This is a DTO (Data Transfer Object).
  * A book request arriving in an order form from the client.
  * Contains just enough information to validate the book
  * requested against the book catalog in the database.
- *
+ * <p>
  * (We ignore any extra elements that the client sends
- *  that this class does not require, for example
- *  "lastUpdatedDate").
+ * that this class does not require, for example
+ * "lastUpdatedDate").
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookForm {
@@ -49,41 +50,41 @@ public class BookForm {
     private int price;
     private long categoryId;
 
-    // This is important - it is used during JSON deserialization.
-	public BookForm() {
-	}
+    // Empty constructor for JSON deserialization
+    public BookForm() {
+    }
 
-	public BookForm(long bookId, int price, int points, Long categoryId) {
+    public BookForm(long bookId, int price, int points, Long categoryId) {
         this.bookId = bookId;
         this.price = price;
         this.categoryId = categoryId;
     }
 
-	public long getBookId() {
-		return bookId;
-	}
+    public long getBookId() {
+        return bookId;
+    }
 
-	public void setBookId(long bookId) {
-		this.bookId = bookId;
-	}
+    public void setBookId(long bookId) {
+        this.bookId = bookId;
+    }
 
-	public int getPrice() {
-		return price;
-	}
+    public int getPrice() {
+        return price;
+    }
 
-	public void setPrice(int price) {
-		this.price = price;
-	}
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
-	public long getCategoryId() {
-		return categoryId;
-	}
+    public long getCategoryId() {
+        return categoryId;
+    }
 
-	public void setCategoryId(long categoryId) {
-		this.categoryId = categoryId;
-	}
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
+    }
 
-	@Override
+    @Override
     public String toString() {
         return "business.book.BookForm[book_id=" + bookId + "]";
     }

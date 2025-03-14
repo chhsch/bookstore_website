@@ -10,19 +10,32 @@ import CategoriesSidebar from "./CategoriesSidebar";
 
 function CategoryBookList(){
     const {id} = useParams();
-    const categories = useContext(Category);
+    // const categories = useContext(Category);
 
     // axios.defaults.baseURL = 'http://localhost:8080/ChihHsingBookstoreReactState/api/';
     axios.defaults.baseURL = '/ChihHsingBookstoreReactTransact/api/';
+
     const [books, setBook] = useState([]);
 
-    useEffect(() => {
-        axios.get(`/categories/name/${id}/books`)
-            .then((response) => setBook(response.data))
-            .catch(error => {
-                console.error("Error fetching books for category:", error);
-            });
-    }, [id]);
+    // useEffect(() => {
+    //     axios.get(`/categories/name/${id}/books`)
+    //         .then((response) => setBook(response.data))
+    //
+    //         .catch(error => {
+    //             console.error("Error fetching books for category:", error);
+    //         });
+    // }, [id]);
+        useEffect(() => {
+            axios.get(`/categories/name/${id}/books`)
+
+                .then((response) => {
+                    console.log("API response data:", response.data);
+                    setBook(response.data);
+                })
+                .catch(error => {
+                    console.error("Error fetching books for category:", error);
+                });
+        }, [id]);
 
     return (
 

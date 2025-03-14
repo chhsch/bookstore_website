@@ -7,6 +7,11 @@ import jakarta.ws.rs.ext.Provider;
 
 import java.io.IOException;
 
+/**
+ * The CorsFilter class enables Cross-Origin Resource Sharing (CORS),
+ * allowing a frontend (e.g., React app running on http://localhost:3000)
+ * to make API requests to backend.
+ */
 @Provider
 public class CorsFilter implements ContainerResponseFilter {
 

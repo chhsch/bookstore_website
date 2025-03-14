@@ -1,13 +1,15 @@
 .cart-table {
     display: grid;
     flex-direction: column;
-    margin: 7em auto 1em;
+    margin: 7em 0 1em 5em; /* 移除 auto 並設置左邊距 */
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     background-color: #f5f5f5;
-    /*padding: 1em;*/
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /*padding-top: 10px;*/
+}
+
+.clear-cart-button:hover {
+    background-color: #c5b8b8;
 }
 .cart-item {
     display: grid;
@@ -99,7 +101,7 @@ ul > li {
 }
 
 .cart-item-remove {
-    background-color: #dc3545;
+    background-color: #ccacac;
     color: white;
     border: 1em;
     padding: 0.5em 1em ;
@@ -266,6 +268,9 @@ select {
     padding-right: 320px;
 }
 
+
+
+/* 右上角的購物車總結 */
 .cart-summary-container {
     width: 300px;
     padding: 1em;
@@ -273,10 +278,60 @@ select {
     border: 1px solid #eaeaea;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    top: 100px;
-    flex-shrink: 0;
-    margin-top: 1em;
+    position: fixed;
+    top: 9em; /* 距離父容器頂部 1em */
+    right: 2em; /* 距離父容器右側 1em */
+    z-index: 1000; /* 確保元素在其他元素之上 */
+
 }
+/*.continue-shopping-button {*/
+/*    background-color: #f0f0f0; !* Light grey background *!*/
+/*    color: #333; !* Dark grey text *!*/
+/*    padding: 10px 15px;*/
+/*    border: 1px solid #ccc; !* Light grey border *!*/
+/*    border-radius: 5px; !* Rounded corners *!*/
+/*    cursor: pointer; !* Makes it clear the button is clickable *!*/
+/*    text-decoration: none; !* In case it's a link, remove underline *!*/
+/*    margin-top: 10px;*/
+/*    position: fixed;*/
+/*    top: 23em ; !* 設置在 .cart-summary-container 下方 *!*/
+/*    right: 1em;*/
+/*}*/
+
+/* 繼續購物按鈕 */
+.continue-shopping-button {
+    width: 300px;
+    background-color:  #e0e3c7; /* Light grey background */
+    color: #333; /* Dark grey text */
+    padding: 10px 15px;
+    border: 1px solid #e0e3c7; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Makes it clear the button is clickable */
+    text-decoration: none; /* In case it's a link, remove underline */
+    margin-top: 10px;
+    position: fixed;
+    top: 23em; /* 設置在 .cart-summary-container 下方 */
+    right: 2em;
+
+}
+
+/* 清空購物車按鈕 */
+.clear-cart-button {
+    width: 300px;
+    background-color: #f0f0f0; /* Light grey background */
+    color: #333; /* Dark grey text */
+    padding: 10px 15px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Makes it clear the button is clickable */
+    text-decoration: none; /* In case it's a link, remove underline */
+    margin-top: 10px;
+    position: fixed;
+    top: 27em; /* 設置在 .cart-summary-container 下方 */
+    right: 2em; /* 設置在繼續購物按鈕的左邊 */
+}
+
+
 
 .cart-summary h3 {
     margin-bottom: 1em;
@@ -289,8 +344,8 @@ select {
 }
 
 .checkout-button {
-    background-color: #000;
-    color: #fff;
+    background-color: #c7d5e3;
+    color: #100e0e;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -322,37 +377,7 @@ select {
     margin-bottom: 20px;
 
 }
-.continue-shopping-button {
-    background-color: #f0f0f0; /* Light grey background */
-    color: #333; /* Dark grey text */
-    padding: 10px 15px;
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Makes it clear the button is clickable */
-    text-decoration: none; /* In case it's a link, remove underline */
-    /* Additional styles to match your site's theme */
-    margin-top: 10px;
-    margin-left: 35%;
-    position: absolute;
 
-}
-.clear-cart-button {
-    background-color: #f0f0f0; /* Light grey background */
-    color: #333; /* Dark grey text */
-    padding: 10px 15px;
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Makes it clear the button is clickable */
-    text-decoration: none; /* In case it's a link, remove underline */
-    /* Additional styles to match your site's theme */
-    margin-top: 10px;
-    margin-left: 25%;
-    /*margin-right: 10%;*/
-    position: relative;
-}
-.clear-cart-button:hover {
-    background-color: #c5b8b8;
-}
 
 .header-book-information, .header-quantity, .header-price {
     display: flex ;

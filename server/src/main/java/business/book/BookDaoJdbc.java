@@ -1,8 +1,10 @@
 package business.book;
+/**
+ * This class implements the DAO interface and performs actual database queries.
+ */
 
-import business.BookstoreDbException;
+import business.BookstoreDbException.BookstoreQueryDbException;
 import business.JdbcUtils;
-import business.category.Category;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import business.BookstoreDbException.BookstoreQueryDbException;
 
 public class BookDaoJdbc implements BookDao {
 
@@ -91,10 +92,9 @@ public class BookDaoJdbc implements BookDao {
         return books;
     }
 
-
-
+    //convert database row → Java Book object
     private Book readBook(ResultSet resultSet) throws SQLException {
-        // TODO add description, isFeatured, rating to Book results
+
         long bookId = resultSet.getLong("book_id");
         String title = resultSet.getString("title");
         String author = resultSet.getString("author");

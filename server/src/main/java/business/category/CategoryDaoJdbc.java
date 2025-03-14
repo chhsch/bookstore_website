@@ -20,10 +20,7 @@ public class CategoryDaoJdbc implements CategoryDao {
             "SELECT category_id, name " +
                     "FROM category " +
                     "WHERE category_id = ?";
-    private static final String FIND_BY_CATEGORY_NAME_SQL =
-            "SELECT category_id, name " +
-                    "FROM category " +
-                    "WHERE category_id = ?";
+
     private static final String FIND_BY_NAME_SQL =
             "SELECT category_id, name " +
                     "FROM category " +
@@ -32,7 +29,9 @@ public class CategoryDaoJdbc implements CategoryDao {
     @Override
     public List<Category> findAll() {
         List<Category> categories = new ArrayList<>();
+        //JdbcUtils.getConnection() → Gets a database connection
         try (Connection connection = JdbcUtils.getConnection();
+             //PreparedStatement: can prevent SQL Injection Attack
              PreparedStatement statement = connection.prepareStatement(FIND_ALL_SQL);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
