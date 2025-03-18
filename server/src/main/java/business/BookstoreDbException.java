@@ -1,5 +1,6 @@
 package business;
 
+//Handle different types of database errors
 public class BookstoreDbException extends RuntimeException {
 
     public BookstoreDbException(String message) {

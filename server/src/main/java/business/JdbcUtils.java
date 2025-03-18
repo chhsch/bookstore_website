@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+//It helps the application get a connection to the database.
 public class JdbcUtils {
 
     private static final String JDBC_BOOKSTORE = "jdbc/WebDB";
