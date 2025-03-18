@@ -1,15 +1,12 @@
 package business.order;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import business.BookstoreDbException.BookstoreQueryDbException;
+import business.BookstoreDbException.BookstoreUpdateDbException;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import business.BookstoreDbException.BookstoreQueryDbException;
-import business.BookstoreDbException.BookstoreUpdateDbException;
 
 import static business.JdbcUtils.getConnection;
 
@@ -31,19 +28,25 @@ public class OrderDaoJdbc implements OrderDao {
             "SELECT customer_order_id, customer_id, amount, date_created, confirmation_number " +
                     "FROM customer_order WHERE customer_order_id = ?";
 
+    //This method is used to insert a new order into the customer_order table
+    // and return the auto-generated customer_order_id (primary key).
     @Override
     public long create(Connection connection, int amount, int confirmationNumber, long customerId) {
-        try (PreparedStatement statement = connection.prepareStatement(CREATE_ORDER_SQL, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement statement = connection.prepareStatement(CREATE_ORDER_SQL,
+                Statement.RETURN_GENERATED_KEYS)) {
             statement.setInt(1, amount);
             statement.setInt(2, confirmationNumber);
             statement.setLong(3, customerId);
+            //number of rows inserted
             int affected = statement.executeUpdate();
             if (affected != 1) {
                 throw new BookstoreUpdateDbException("Failed to insert an order, affected row count = " + affected);
             }
             long customerOrderId;
             ResultSet rs = statement.getGeneratedKeys();
+            //moves to the first row of the returned keys.
             if (rs.next()) {
+                //gets the value of customer_order_id
                 customerOrderId = rs.getLong(1);
             } else {
                 throw new BookstoreUpdateDbException("Failed to retrieve customerOrderId auto-generated key");
@@ -60,7 +63,8 @@ public class OrderDaoJdbc implements OrderDao {
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(FIND_ALL_SQL);
              ResultSet resultSet = statement.executeQuery()) {
-            while(resultSet.next()) {
+            while (resultSet.next()) {
+                //readOrder(resultSet) converts each database row into an Order Java object
                 Order order = readOrder(resultSet);
                 result.add(order);
             }

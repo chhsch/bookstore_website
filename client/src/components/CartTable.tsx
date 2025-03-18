@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { CartStore } from '../contexts/CartContext';
+import React, {useContext} from 'react';
+import {CartStore} from '../contexts/CartContext';
 import '../assets/css/carttable.css';
 import {BookItem, ShoppingCartItem} from "../types";
-import { CartTypes } from '../reducers/CartReducer';
-import { useNavigate } from 'react-router-dom';
+import {CartTypes} from '../reducers/CartReducer';
+import {useNavigate} from 'react-router-dom';
 
-
+// Creates a helper function that receives a BookItem and returns a file name string for its image
 const getBookImageUrl = (book: BookItem): string => {
     let name = book.title.toLowerCase();
     name = name.replace(/'/g, "");
@@ -14,7 +14,7 @@ const getBookImageUrl = (book: BookItem): string => {
     return `${name}.gif`;
 };
 
-
+// CartTable component
 function CartTable() {
     const {cart, dispatch} = useContext(CartStore);
     const navigate = useNavigate();
@@ -32,13 +32,12 @@ function CartTable() {
     const handleQuantityChange = (id: number, quantity: number) => {
         dispatch({type: CartTypes.UPDATE_QUANTITY, id: id, quantity: quantity});
     };
-    const continueShopping = () => {
-        const lastVisitedCategory = localStorage.getItem('lastVisitedCategory');
-        const categoryPath = lastVisitedCategory ? `/categories/${lastVisitedCategory}` : '/';
-        console.log("Navigating to:", categoryPath);
-        navigate(categoryPath);
-    };
-
+    // const continueShopping = () => {
+    //     const lastVisitedCategory = localStorage.getItem('lastVisitedCategory');
+    //     const categoryPath = lastVisitedCategory ? `/categories/${lastVisitedCategory}` : '/';
+    //     console.log("Navigating to:", categoryPath);
+    //     navigate(categoryPath);
+    // };
     return (
 
         <div className="cart-table">
@@ -48,6 +47,7 @@ function CartTable() {
                 <div className="header-price">Subtotal</div>
                 <div className="header-modify"></div>
             </div>
+            {/*Loops through each cart item and casts it as ShoppingCartItem*/}
             {cart.map((item, index) => {
                 const cartItem = item as ShoppingCartItem;
                 let imageUrl;
@@ -60,7 +60,7 @@ function CartTable() {
                 return (
                     <div key={item.book.bookId} className="cart-item">
                         <div className="cart-book-image">
-                            <img src={imageUrl} alt={item.book.title} />
+                            <img src={imageUrl} alt={item.book.title}/>
                         </div>
                         <div className="cart-book-details">
                             <div className="cart-book-title">{item.book.title}</div>
@@ -68,12 +68,18 @@ function CartTable() {
                             <div className="cart-book-meta">
                                 <div className="cart-book-price">${item.book.price.toFixed(2)}</div>
                                 <div className="cart-book-quantity">
-                                    <button onClick={() => handleQuantityChange(item.book.bookId, Math.max(0, item.quantity - 1))}>-</button>
+                                    <button
+                                        onClick={() => handleQuantityChange(item.book.bookId, Math.max(0, item.quantity - 1))}>-
+                                    </button>
                                     <span>{item.quantity}</span>
-                                    <button onClick={() => handleQuantityChange(item.book.bookId, item.quantity + 1)}>+</button>
+                                    <button
+                                        onClick={() => handleQuantityChange(item.book.bookId, item.quantity + 1)}>+
+                                    </button>
                                 </div>
                                 <div className="cart-book-total">${calculateTotalPrice(item.book, item.quantity)}</div>
-                                <button className="cart-item-remove" onClick={() => handleRemoveFromCart(item.book.bookId)}>Remove</button>
+                                <button className="cart-item-remove"
+                                        onClick={() => handleRemoveFromCart(item.book.bookId)}>Remove
+                                </button>
                             </div>
                         </div>
                     </div>
